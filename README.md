@@ -1,16 +1,16 @@
-# camp
+# InterIIT App Dev Recruitment Task
 
-A new Flutter project.
+This is a normal flutter project, and can be built by
+```sh
+flutter build apk --split-per-abi
+```
 
-## Getting Started
+Before building you would need to put your `weatherapi.com` API key in `lib/pages/dynamic_data.dart` (line 75)
 
-This project is a starting point for a Flutter application.
+In the **image page**, the animated webp is being fetched from giphy.
 
-A few resources to get you started if this is your first Flutter project:
+In the **Static data page**, using an API the app is fetching some dummy data in JSON format and rendering it on the page. The number of enteries being fetched can be varied. Doing this would also refresh the current enteries and fresh random entries will be displayed.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+In the **weather page**, the app is refreshing its data every 1 minute via the Timer object provided by the `dart/async` package.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I could not complete implementing the notifications part.
