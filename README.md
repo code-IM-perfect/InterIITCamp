@@ -14,3 +14,5 @@ In the **Static data page**, using an API the app is fetching some dummy data in
 In the **weather page**, the app is refreshing its data every 1 minute via the Timer object provided by the `dart/async` package.
 
 I could not complete implementing the notifications part.
+
+### The apk is in the releases section
