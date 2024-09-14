@@ -10,6 +10,14 @@ class NotificationEditor extends StatefulWidget {
 class _NotificationEditorState extends State<NotificationEditor> {
   @override
   Widget build(BuildContext context) {
-    return const Text("Bakchod");
+    return Center(
+      child: Container(
+        margin: const EdgeInsets.only(top: 20),
+        child: FilledButton(
+          onPressed: () {},
+          child: const Text("Get Notification"),
+        ),
+      ),
+    );
   }
 }

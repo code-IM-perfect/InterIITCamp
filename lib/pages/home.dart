@@ -17,54 +17,56 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          [
-            "Images from the Web",
-            "My Books",
-            "Data",
-            "Notification Interval"
-          ][currentPageIndex],
-          style: const TextStyle(fontWeight: FontWeight.bold),
+        appBar: AppBar(
+          title: Text(
+            [
+              "Images from the Web",
+              "Fetch Books",
+              "",
+              "Notification Interval"
+            ][currentPageIndex],
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        destinations: const [
-          NavigationDestination(
-            selectedIcon: Icon(Icons.image),
-            icon: Icon(Icons.image_outlined),
-            label: "Image",
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.data_object),
-            icon: Icon(Icons.data_object_outlined),
-            label: "Static",
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.data_usage),
-            icon: Icon(Icons.data_usage_outlined),
-            label: "Live",
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.edit_notifications),
-            icon: Icon(Icons.edit_notifications_outlined),
-            label: "Live",
-          ),
-        ],
-        selectedIndex: currentPageIndex,
-      ),
-      body: [
-        const ImagePage(),
-        const StaticData(),
-        const LiveData(),
-        const NotificationEditor(),
-      ][currentPageIndex],
-    );
+        bottomNavigationBar: NavigationBar(
+          onDestinationSelected: (int index) {
+            setState(() {
+              currentPageIndex = index;
+            });
+          },
+          destinations: const [
+            NavigationDestination(
+              selectedIcon: Icon(Icons.image),
+              icon: Icon(Icons.image_outlined),
+              label: "Image",
+            ),
+            NavigationDestination(
+              selectedIcon: Icon(Icons.data_object),
+              icon: Icon(Icons.data_object_outlined),
+              label: "Static",
+            ),
+            NavigationDestination(
+              selectedIcon: Icon(Icons.water),
+              icon: Icon(Icons.water_outlined),
+              label: "Weather",
+            ),
+            NavigationDestination(
+              selectedIcon: Icon(Icons.edit_notifications),
+              icon: Icon(Icons.edit_notifications_outlined),
+              label: "Notifications",
+            ),
+          ],
+          selectedIndex: currentPageIndex,
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: [
+            const ImagePage(),
+            const StaticData(),
+            const LiveData(),
+            const NotificationEditor(),
+          ][currentPageIndex],
+        ));
   }
 }
